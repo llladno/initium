@@ -1,0 +1,52 @@
+button{
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+}
+
+.button{
+  padding: 16px 22px 16px 22px;
+  border-radius: 37px;
+  color: $default-white;
+  background-color: $button-default;
+
+  &:hover{
+    background-color: $button-default-hover;
+  }
+  &:active{
+    background-color: $button-default-active;
+  }
+
+  &:disabled{
+    background-color: $button-default-disabled;
+  }
+
+  &-secondary{
+    padding: 16px 22px 16px 22px;
+    border-radius: 37px;
+    background-color: $button-secondary;
+    color: $button-default;
+    &:hover{
+      background-color: $button-secondary-hover;
+    }
+    &:active{
+      background-color: $button-secondary-active;
+    }
+  }
+}
+
+.icon__button{
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: none;
+  border: none;
+
+  &:hover{
+    background-color: $button-secondary-hover;
+  }
+
+  &:active{
+    background-color: $button-icon-active;
+  }
+}
