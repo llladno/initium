@@ -1,0 +1,34 @@
+<div class="table__container">
+  <div>
+    <button class="icon__button" (click)="click({type: 'add', data: ''})">
+      <img disabled *ngIf="users.length < 1" src="assets/icons/AddDisable.svg">
+      <img *ngIf="users.length > 0" src="assets/icons/AddDefault.svg">
+    </button>
+    <button [disabled]="checked.length < 1" class="icon__button" (click)="click({type: 'delete', data: checked})">
+      <img disabled *ngIf="checked.length < 1" src="assets/icons/DeleteDisable.svg">
+      <img *ngIf="checked.length > 0" src="assets/icons/DeleteDefault.svg">
+    </button>
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th><input type="checkbox" (change)="allChecked($event)"></th>
+      <th (click)="sort('name')">Имя</th>
+      <th (click)="sort('surname')">Фамилия</th>
+      <th (click)="sort('email')">E-mail</th>
+      <th (click)="sort('phone')">Телефон</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users; index as i" [ngClass]="checked.includes(user) ? 'selected' : 'unselected' ">
+      <td><input type="checkbox" (change)="onCheck($event,user)" [checked]="checked.includes(user)"></td>
+      <td><a (click)="click({type: i,data: user})">{{ user.name }}</a></td>
+      <td><a (click)="click({type: i,data: user})">{{ user.surname }}</a></td>
+      <td><a (click)="click({type: i,data: user})">{{ user.email }}</a></td>
+      <td><a (click)="click({type: i,data: user})">{{ user.phone }}</a></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

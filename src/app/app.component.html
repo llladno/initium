@@ -1,0 +1,5 @@
+<header>
+  <h1>Клиенты</h1>
+</header>
+<app-table (openPopup)="handlePopUp($event)"></app-table>
+<app-popup *ngIf="popUp" (closePopup)="handlePopUp($event)" [data]="popUpData"></app-popup>

@@ -1,0 +1,75 @@
+<div class="popup">
+  <div *ngIf="data?.type === 'add' else delete" class="popup__form">
+    <form [formGroup]="form" (submit)="submit($event, 'add')">
+      <h2>Новый клиент</h2>
+      <mat-form-field appearance="outline">
+        <mat-label>Имя</mat-label>
+        <input matInput formControlName="name" placeholder="Имя">
+        <mat-error>Обязательное поле</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Фамилия</mat-label>
+        <input matInput formControlName="surname" placeholder="Фамилия">
+        <mat-error>Обязательное поле</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input matInput  formControlName="email" placeholder="Имя">
+        <mat-error>Некорректный адрес</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Телефон</mat-label>
+        <input matInput formControlName='phone' placeholder="Телефон">
+        <mat-error>Некорректный номер телефона</mat-error>
+      </mat-form-field>
+      <div class="popup__form__button">
+        <button type="button" class="button-secondary" (click)="closePopup.emit()">Отмена</button>
+        <button class="button">Сохранить</button>
+      </div>
+    </form>
+  </div>
+  <ng-template #delete>
+    <div class="popup__form-delete" *ngIf="data?.type === 'delete' else changeData">
+        <form (submit)="submit($event, 'delete', data?.data)">
+          <h2>Удаление строк</h2>
+          <p>Удалить выбранные строки ({{data?.data?.length}})?</p>
+          <div class="popup__form__button">
+            <button type="button" class="button-secondary" (click)="closePopup.emit()">Отмена</button>
+            <button class="button" type="submit">Сохранить</button>
+          </div>
+        </form>
+    </div>
+    <ng-template #changeData>
+      <div class="popup__form">
+        <form [formGroup]="form" (submit)="submit($event, 'update', data?.type)">
+          <h2>Редактировать</h2>
+          <mat-form-field appearance="outline">
+            <mat-label>Имя</mat-label>
+            <input matInput formControlName="name" placeholder="Имя">
+            <mat-error>Обязательное поле</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Фамилия</mat-label>
+            <input matInput formControlName="surname" placeholder="Фамилия">
+            <mat-error>Обязательное поле</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input matInput formControlName="email" placeholder="Имя">
+            <mat-error>Некорректный адрес</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Телефон</mat-label>
+            <input matInput formControlName='phone' placeholder="Телефон">
+            <mat-error>Некорректный номер телефона</mat-error>
+          </mat-form-field>
+          <div class="popup__form__button">
+            <button type="button" class="button-secondary" (click)="closePopup.emit()">Отмена</button>
+            <button class="button" type="submit" >Сохранить</button>
+          </div>
+        </form>
+      </div>
+    </ng-template>
+  </ng-template>
+
+</div>
