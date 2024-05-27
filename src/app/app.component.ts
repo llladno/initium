@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {EventI} from "./types/types";
+import {EventI} from "../types/types";
 
 
 @Component({

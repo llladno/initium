@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import axios from "axios";
-import {UsersI} from "../types/types";
+import {UsersI} from "../../types/types";
 import {BehaviorSubject} from "rxjs";
 
 @Injectable({

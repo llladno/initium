@@ -1,27 +1,79 @@
 # Initium
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
+Это тестовое задание Initium. Ниже вы найдете инструкции по настройке и запуску проекта, а также краткое описание структуры проекта и используемых технологий.
 
-## Development server
+## Содержание
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Начало работы](#начало-работы)
+  - [Предварительные требования](#предварительные-требования)
+  - [Установка](#установка)
+  - [Запуск проекта](#запуск-проекта)
+- [Структура проекта](#структура-проекта)
+- [Используемые технологии](#используемые-технологии)
+- [Доступ к выполненому заданию](#доступ-к-выполненому-заданию)
 
-## Code scaffolding
+## Начало работы
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Предварительные требования
 
-## Build
+Перед началом убедитесь, что у вас установлены следующие программы:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [Node.js](https://nodejs.org/en/download/)
+- [npm](https://www.npmjs.com/get-npm) или [yarn](https://yarnpkg.com/getting-started/install)
+- [Angular CLI](https://v17.angular.io/cli)
+### Установка
 
-## Running unit tests
+1. Клонируйте репозиторий:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+git clone git clone https://github.com/llladno/initium.git
+```
 
-## Running end-to-end tests
+2. Перейдите в директорию проекта:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+cd initium
+```
 
-## Further help
+3. Установите зависимости:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+npm install
+```
+
+### Запуск проекта
+```bash
+npm ng serve
+```
+Это запустит проект по адресу [http://localhost:4200/ (по умолчанию)](http://localhost:4200/)
+### Структура проекта
+```
+src/
+├── app/
+│   ├── api/
+│   │   └── testapi.ts        # Определения вызовов API
+│   ├── components/
+│   │   ├── app.component.html  # Шаблон главного компонента
+│   │   ├── app.component.scss  # Стили главного компонента
+│   │   ├── app.component.ts    # Логика главного компонента
+│   │   └── app.module.ts       # Модуль приложения
+├── assets/
+│   ├── components/       # Стили компонентов
+│   ├── icons/            # Иконки
+│   │   ├── _base.scss       # Базовые стили
+│   │   ├── _typography.scss # Стили типографики
+│   │   └── _variables.scss  # SCSS переменные
+├── types/
+│   └── favicon.ico       # Иконка приложения
+├── index.html            # Главный HTML файл
+├── main.ts               # Точка входа приложения
+└── styles.scss           # Основной файл стилей
+```
+
+## Используемые технологии
+* Angular: Платформа для разработки веб-приложений.
+* TypeScript: Типизированное надмножество JavaScript, которое компилируется в чистый JavaScript.
+* SCSS: CSS-препроцессор, который добавляет мощность и элегантность в базовый язык.
+
+## Доступ к выполненому заданию
+Чтобы посмотреть выполненное задание, можно перейти по адресу [https://llladno.github.io/initium/](https://llladno.github.io/initium/)

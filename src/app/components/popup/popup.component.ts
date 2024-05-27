@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import { UsersI} from "../types/types";
-import ApiService from "../api/api.service";
+import { UsersI} from "../../../types/types";
+import ApiService from "../../api/api.service";
 
 
 @Component({

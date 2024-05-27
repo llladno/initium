@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import ApiService from "../../api/api.service";
-import {EventI, UsersI} from "../../types/types";
+import {EventI, UsersI} from "../../../types/types";
 import apiService from "../../api/api.service";
 
 
